@@ -2,9 +2,9 @@ import Navbar from '../components/Navbar'
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen bg-bg-white">
+    <div className="min-h-screen" style={{ background: '#0a0a0f' }}>
       <Navbar />
-      <main className="pt-20">
+      <main className="pt-16">
         {children}
       </main>
     </div>
@@ -12,5 +12,3 @@ const Layout = ({ children }) => {
 }
 
 export default Layout
-
-

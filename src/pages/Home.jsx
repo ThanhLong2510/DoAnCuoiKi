@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
-import { Download, Github, Mail, Phone } from 'lucide-react'
+import { Download, Github, Mail, Phone, Shield, Lock, Terminal } from 'lucide-react'
+import ParticleBackground from '../components/ParticleBackground'
+import CyberGrid from '../components/CyberGrid'
 
 const Home = () => {
   const containerVariants = {
@@ -23,10 +25,19 @@ const Home = () => {
     },
   }
 
+  const floatingIcons = [
+    { Icon: Shield, delay: 0 },
+    { Icon: Lock, delay: 1 },
+    { Icon: Terminal, delay: 2 },
+  ]
+
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(to bottom right, #ffffff, #f8fbff, #e6f4ff)' }}>
+    <div className="min-h-screen relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a0a0f 0%, #0f172a 50%, #0a0a0f 100%)' }}>
+      <ParticleBackground />
+      <CyberGrid />
+      
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -36,27 +47,46 @@ const Home = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <motion.div variants={itemVariants} className="space-y-4">
-              <div className="inline-block">
+              <motion.div 
+                className="inline-block"
+                whileHover={{ scale: 1.05 }}
+              >
                 <span 
-                  className="px-4 py-2 text-white rounded-full text-sm font-semibold shadow-lg glow-effect"
-                  style={{ background: 'linear-gradient(to right, #06b6d4, #0ea5e9)' }}
+                  className="px-4 py-2 text-cyan-400 rounded-full text-sm font-semibold neon-border"
+                  style={{ 
+                    background: 'rgba(6, 182, 212, 0.1)',
+                    border: '1px solid rgba(6, 182, 212, 0.5)'
+                  }}
                 >
+                  <span className="mr-2">🛡️</span>
                   Kỹ sư An Ninh Mạng
                 </span>
-              </div>
+              </motion.div>
               
-              <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-tight">
-                <span className="block gradient-text">LÊ VÕ THÀNH LONG</span>
+              <h1 className="text-4xl lg:text-6xl font-heading font-bold leading-tight">
+                <motion.span 
+                  className="block gradient-text neon-glow whitespace-nowrap"
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  LÊ VÕ THÀNH LONG
+                </motion.span>
               </h1>
               
-              <h2 className="text-3xl lg:text-5xl font-heading font-bold gradient-text">
-                KẾT NỐI TƯƠNG LAI
-              </h2>
+              <motion.h2 
+                className="text-2xl lg:text-3xl font-heading font-bold text-cyan-400 typing-cursor"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
+                {" KẾT NỐI TƯƠNG LAI "}
+              </motion.h2>
             </motion.div>
 
             <motion.p
               variants={itemVariants}
-              className="text-lg text-gray-700 leading-relaxed max-w-xl"
+              className="text-lg text-gray-400 leading-relaxed max-w-xl"
             >
               Đam mê nghiên cứu bảo mật thông tin, networking, triển khai mô hình, 
               triển khai hệ thống thực tế và DevOps. Luôn tìm kiếm những giải pháp 
@@ -68,43 +98,79 @@ const Home = () => {
               variants={itemVariants}
               className="flex flex-wrap gap-4"
             >
-              <a
-                href="#"
-                className="flex items-center space-x-2 px-6 py-3 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl glow-effect-hover transition-all duration-300"
-                style={{ background: 'linear-gradient(to right, #06b6d4, #0ea5e9)' }}
+              <motion.a
+                href="/CV Thành Long.png"
+                download
+                className="flex items-center space-x-2 px-6 py-3 text-white rounded-lg font-semibold transition-all duration-300 neon-border"
+                style={{ 
+                  background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(139, 92, 246, 0.2))',
+                  border: '1px solid rgba(6, 182, 212, 0.5)'
+                }}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: '0 0 30px rgba(6, 182, 212, 0.5)'
+                }}
+                whileTap={{ scale: 0.95 }}
               >
                 <Download className="w-5 h-5" />
                 <span>Tải CV</span>
-              </a>
+              </motion.a>
               
-              <a
+              <motion.a
                 href="https://github.com/ThanhLong2510"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 px-6 py-3 bg-white border-2 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300"
-                style={{ borderColor: '#06b6d4', color: '#06b6d4' }}
+                className="flex items-center space-x-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+                style={{ 
+                  background: 'rgba(15, 23, 42, 0.8)',
+                  border: '1px solid rgba(6, 182, 212, 0.3)',
+                  color: '#06b6d4'
+                }}
+                whileHover={{ 
+                  scale: 1.05,
+                  borderColor: 'rgba(6, 182, 212, 0.8)'
+                }}
+                whileTap={{ scale: 0.95 }}
               >
                 <Github className="w-5 h-5" />
                 <span>GitHub</span>
-              </a>
+              </motion.a>
               
-              <a
-                href="mailto:contact@example.com"
-                className="flex items-center space-x-2 px-6 py-3 bg-white border-2 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300"
-                style={{ borderColor: '#06b6d4', color: '#06b6d4' }}
+              <motion.a
+                href="mailto:lvtlong25@gmail.com"
+                className="flex items-center space-x-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+                style={{ 
+                  background: 'rgba(15, 23, 42, 0.8)',
+                  border: '1px solid rgba(6, 182, 212, 0.3)',
+                  color: '#06b6d4'
+                }}
+                whileHover={{ 
+                  scale: 1.05,
+                  borderColor: 'rgba(6, 182, 212, 0.8)'
+                }}
+                whileTap={{ scale: 0.95 }}
               >
                 <Mail className="w-5 h-5" />
                 <span>Email</span>
-              </a>
+              </motion.a>
               
-              <a
+              <motion.a
                 href="tel:+84123456789"
-                className="flex items-center space-x-2 px-6 py-3 bg-white border-2 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300"
-                style={{ borderColor: '#06b6d4', color: '#06b6d4' }}
+                className="flex items-center space-x-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+                style={{ 
+                  background: 'rgba(15, 23, 42, 0.8)',
+                  border: '1px solid rgba(6, 182, 212, 0.3)',
+                  color: '#06b6d4'
+                }}
+                whileHover={{ 
+                  scale: 1.05,
+                  borderColor: 'rgba(6, 182, 212, 0.8)'
+                }}
+                whileTap={{ scale: 0.95 }}
               >
                 <Phone className="w-5 h-5" />
                 <span>Phone</span>
-              </a>
+              </motion.a>
             </motion.div>
           </div>
 
@@ -114,43 +180,86 @@ const Home = () => {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative">
-              <div className="gradient-border">
-                <div className="bg-white rounded-lg p-2">
+              {/* Floating security icons */}
+              {floatingIcons.map(({ Icon, delay }, index) => (
+                <motion.div
+                  key={index}
+                  className="absolute"
+                  style={{
+                    top: `${20 + index * 30}%`,
+                    left: index % 2 === 0 ? '-20px' : 'auto',
+                    right: index % 2 === 1 ? '-20px' : 'auto',
+                  }}
+                  animate={{
+                    y: [0, -10, 0],
+                    opacity: [0.5, 1, 0.5],
+                  }}
+                  transition={{
+                    duration: 3,
+                    delay,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                >
+                  <div className="p-2 rounded-lg neon-border" style={{ background: 'rgba(6, 182, 212, 0.1)' }}>
+                    <Icon className="w-6 h-6 text-cyan-400" />
+                  </div>
+                </motion.div>
+              ))}
+
+              <motion.div 
+                className="gradient-border"
+                animate={{
+                  boxShadow: [
+                    '0 0 20px rgba(6, 182, 212, 0.3)',
+                    '0 0 40px rgba(6, 182, 212, 0.5)',
+                    '0 0 20px rgba(6, 182, 212, 0.3)',
+                  ],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              >
+                <div className="rounded-lg p-2" style={{ background: 'rgba(15, 23, 42, 0.9)' }}>
                   <div 
-                    className="w-[400px] h-[570px] lg:w-[480px] lg:h-[680px] rounded-lg flex items-center justify-center glow-effect"
-                    style={{ background: 'linear-gradient(to bottom right, rgba(6,182,212,0.2), rgba(14,165,233,0.2), rgba(139,92,246,0.2))' }}
+                    className="w-[400px] h-[570px] lg:w-[480px] lg:h-[680px] rounded-lg flex items-center justify-center overflow-hidden relative"
+                    style={{ background: 'linear-gradient(135deg, rgba(6,182,212,0.1), rgba(139,92,246,0.1))' }}
                   >
-                    <div className="w-full h-full rounded-lg bg-gray-200 flex items-center justify-center overflow-hidden">
-                      {/* Avatar Image - tỷ lệ 9:16 (1080x1920) */}
-                      <img 
-                        src="/AnhCV.png" 
-                        alt="Lê Võ Thành Long"
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.target.style.display = 'none'
-                          if (e.target.nextSibling) {
-                            e.target.nextSibling.style.display = 'flex'
-                          }
-                        }}
-                      />
-                      <div 
-                        className="text-4xl font-heading font-bold gradient-text items-center justify-center w-full h-full absolute text-center"
-                        style={{ display: 'none' }}
-                      >
-                        LVTL
-                      </div>
-                    </div>
+                    {/* Scan line effect on image */}
+                    <motion.div
+                      className="absolute inset-0 z-10 pointer-events-none"
+                      style={{
+                        background: 'linear-gradient(180deg, transparent 0%, rgba(6, 182, 212, 0.1) 50%, transparent 100%)',
+                        height: '30%',
+                      }}
+                      animate={{
+                        top: ['-30%', '100%'],
+                      }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: 'linear',
+                      }}
+                    />
+                    
+                    <img 
+                      src="/AnhCV.png" 
+                      alt="Lê Võ Thành Long"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
-              </div>
+              </motion.div>
               
               {/* Decorative elements */}
               <motion.div
-                className="absolute -top-4 -right-4 w-24 h-24 rounded-full blur-2xl"
-                style={{ backgroundColor: 'rgba(6,182,212,0.2)' }}
+                className="absolute -top-4 -right-4 w-32 h-32 rounded-full blur-3xl"
+                style={{ backgroundColor: 'rgba(6,182,212,0.3)' }}
                 animate={{
                   scale: [1, 1.2, 1],
-                  opacity: [0.5, 0.8, 0.5],
+                  opacity: [0.3, 0.6, 0.3],
                 }}
                 transition={{
                   duration: 3,
@@ -159,11 +268,11 @@ const Home = () => {
                 }}
               />
               <motion.div
-                className="absolute -bottom-4 -left-4 w-32 h-32 rounded-full blur-2xl"
-                style={{ backgroundColor: 'rgba(139,92,246,0.2)' }}
+                className="absolute -bottom-4 -left-4 w-40 h-40 rounded-full blur-3xl"
+                style={{ backgroundColor: 'rgba(139,92,246,0.3)' }}
                 animate={{
                   scale: [1, 1.3, 1],
-                  opacity: [0.5, 0.7, 0.5],
+                  opacity: [0.3, 0.5, 0.3],
                 }}
                 transition={{
                   duration: 4,
