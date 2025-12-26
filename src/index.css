@@ -1,44 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-bg-white text-gray-900 font-sans;
-  }
+/* Base styles */
+body {
+  background-color: #ffffff;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-@layer utilities {
-  .glow-effect {
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(6, 182, 212, 0.2);
-  }
-  
-  .glow-effect-hover:hover {
-    box-shadow: 0 0 30px rgba(6, 182, 212, 0.5), 0 0 60px rgba(6, 182, 212, 0.3);
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .gradient-border {
-    background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #8b5cf6 100%);
-    padding: 2px;
-    border-radius: 12px;
-  }
-  
-  .gradient-text {
-    background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #8b5cf6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+/* Font heading */
+.font-heading {
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Glow effects */
+.glow-effect {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(6, 182, 212, 0.2);
+}
+
+.glow-effect-hover:hover {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.5), 0 0 60px rgba(6, 182, 212, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Gradient utilities */
+.gradient-border {
+  background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #8b5cf6 100%);
+  padding: 2px;
+  border-radius: 12px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Line clamp */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
