@@ -45,10 +45,22 @@ const About = () => {
 
   const timeline = [
     {
+      year: '2025',
+      title: 'IT GOTALENS Competition',
+      description: 'Tham gia cuộc thi IT GOTALENS với dự án: "Extensions hỗ trợ bảo mật mã nguồn"',
+      status: 'current',
+    },
+    {
+      year: '2024',
+      title: 'Top 10 - Sinh viên với ATTT HUTECH 2024',
+      description: 'Đạt Top 10 tại cuộc thi "Sinh viên với An toàn thông tin HUTECH 2024"',
+      status: 'completed',
+    },
+    {
       year: '2024',
       title: 'Kỹ sư An Ninh Mạng',
       description: 'Nghiên cứu và phát triển các giải pháp bảo mật thông tin',
-      status: 'current',
+      status: 'completed',
     },
     {
       year: '2023',
@@ -57,13 +69,13 @@ const About = () => {
       status: 'completed',
     },
     {
-      year: '2022',
-      title: 'Sinh viên Công nghệ Thông tin',
-      description: 'Học tập chuyên sâu về mạng máy tính, bảo mật và AI',
+      year: '2023',
+      title: 'Tham gia CLB An Ninh Mạng',
+      description: 'Học tập và nghiên cứu về bảo mật, tham gia các hoạt động của CLB',
       status: 'completed',
     },
     {
-      year: '2021',
+      year: '2022',
       title: 'Bắt đầu hành trình',
       description: 'Khởi đầu với niềm đam mê công nghệ và an ninh mạng',
       status: 'completed',
@@ -110,10 +122,12 @@ const About = () => {
           </h2>
           <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
-              Tôi là <span className="text-cyan-400 font-semibold">Lê Võ Thành Long</span>, một kỹ sư an ninh mạng với niềm đam mê sâu sắc 
-              về công nghệ và bảo mật thông tin. Với nền tảng vững chắc về mạng máy tính, 
-              AI/ML, và DevOps, tôi luôn tìm kiếm những cách tiếp cận mới để bảo vệ hệ thống 
-              và dữ liệu trong thời đại số.
+              Tôi là <span className="text-cyan-400 font-semibold">Lê Võ Thành Long</span>, kỹ sư an ninh mạng với niềm đam mê sâu sắc dành cho công nghệ và bảo mật thông tin. Dựa trên nền tảng về mạng máy tính, AI/ML và DevOps, tôi luôn khám phá những hướng tiếp cận hiện đại để tăng cường an toàn cho hệ thống và dữ liệu trong kỷ nguyên số.
+              
+            </p>
+            <p>
+              Với quyết tâm không ngừng đổi mới, tôi đặt mục tiêu xây dựng các giải pháp công nghệ an toàn, hiệu quả và có khả năng mở rộng, góp phần tạo nên một thế giới số được bảo vệ tốt hơn và kết nối chặt chẽ hơn.
+
             </p>
             <p>
               Sứ mệnh của tôi là <span className="text-purple-400 font-semibold">kết nối tương lai</span> thông qua việc xây dựng các giải pháp 

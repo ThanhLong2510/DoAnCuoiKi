@@ -80,7 +80,7 @@ const Home = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                {" KẾT NỐI TƯƠNG LAI "}
+                {" SECURITY STARTS WITH YOU "}
               </motion.h2>
             </motion.div>
 
@@ -88,9 +88,9 @@ const Home = () => {
               variants={itemVariants}
               className="text-lg text-gray-400 leading-relaxed max-w-xl"
             >
-              Đam mê nghiên cứu bảo mật thông tin, networking, triển khai mô hình, 
-              triển khai hệ thống thực tế và DevOps. Luôn tìm kiếm những giải pháp 
-              công nghệ tiên tiến để bảo vệ và kết nối thế giới số.
+              Đam mê lĩnh vực an ninh mạng, hệ thống mạng máy tính và DevOps. Không ngừng nghiên cứu,
+              triển khai các mô hình và môi trường thực tế để nâng cao kỹ năng. 
+              Luôn hướng đến những giải pháp công nghệ tiên tiến nhằm tăng cường bảo mật, tối ưu vận hành và bảo vệ thế giới số an toàn hơn.
             </motion.p>
 
             {/* Action Buttons */}
@@ -245,7 +245,7 @@ const Home = () => {
                     />
                     
                     <img 
-                      src="/AnhCV.png" 
+                      src="/AnhCV2.png" 
                       alt="Lê Võ Thành Long"
                       className="w-full h-full object-cover"
                     />

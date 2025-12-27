@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
 import { blogPosts } from '../data/blogData'
@@ -23,6 +24,8 @@ const Blog = () => {
       'DevOps': { bg: 'rgba(59, 130, 246, 0.2)', border: 'rgba(59, 130, 246, 0.5)', text: '#3b82f6' },
       'Cloud': { bg: 'rgba(6, 182, 212, 0.2)', border: 'rgba(6, 182, 212, 0.5)', text: '#06b6d4' },
       'Network': { bg: 'rgba(34, 197, 94, 0.2)', border: 'rgba(34, 197, 94, 0.5)', text: '#22c55e' },
+      'Java': { bg: 'rgba(249, 115, 22, 0.2)', border: 'rgba(249, 115, 22, 0.5)', text: '#f97316' },
+      'JavaScript': { bg: 'rgba(234, 179, 8, 0.2)', border: 'rgba(234, 179, 8, 0.5)', text: '#eab308' },
     }
     return colors[tag] || { bg: 'rgba(107, 114, 128, 0.2)', border: 'rgba(107, 114, 128, 0.5)', text: '#6b7280' }
   }
@@ -51,17 +54,17 @@ const Blog = () => {
         {/* Blog Posts Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
-            <motion.article
-              key={post.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              whileHover={{ 
-                scale: 1.02,
-                boxShadow: '0 0 30px rgba(6, 182, 212, 0.3)'
-              }}
-              className="cyber-card rounded-xl overflow-hidden cursor-pointer group"
-            >
+            <Link to={`/blog/${post.id}`} key={post.id}>
+              <motion.article
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                whileHover={{ 
+                  scale: 1.02,
+                  boxShadow: '0 0 30px rgba(6, 182, 212, 0.3)'
+                }}
+                className="cyber-card rounded-xl overflow-hidden cursor-pointer group h-full"
+              >
               {/* Card Content */}
               <div className="p-6">
                 {/* Tags */}
@@ -119,6 +122,7 @@ const Blog = () => {
                 style={{ background: 'linear-gradient(to right, #06b6d4, #0ea5e9, #8b5cf6)' }}
               />
             </motion.article>
+            </Link>
           ))}
         </div>
 
