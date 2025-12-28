@@ -71,7 +71,7 @@ public class JwtUtil {
       },
       {
         title: 'Cơ chế hoạt động của tấn công XSS',
-        content: 'Tấn công Cross-site scripting hoạt động bằng cách thao túng một trang web tồn tại lỗ hổng để nó trả về mã JavaScript độc hại cho người dùng. Khi mã độc được thực thi trong trình duyệt của nạn nhân, attacker có thể hoàn toàn xâm phạm tương tác của họ với ứng dụng. Attacker có thể đánh cắp các thông tin nhạy cảm như: Password, Wire transfer, Sensitive data, Mother\'s maiden name và nhiều dữ liệu quan trọng khác.',
+        content: 'Tấn công Cross-site scripting hoạt động bằng cách thao túng một trang web tồn tại lỗ hổng để nó trả về mã JavaScript độc hại cho người dùng. Khi mã độc được thực thi trong trình duyệt của nạn nhân, attacker có thể hoàn toàn xâm phạm tương tác trực tiếp với ứng dụng. Attacker có thể đánh cắp các thông tin nhạy cảm như: Password, Wire transfer, Sensitive data, Mother\'s maiden name và nhiều dữ liệu quan trọng khác.',
         image: '/XSS.png'
       },
       {
